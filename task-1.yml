@@ -1,0 +1,4 @@
+- name: Debug
+  debug:
+    msg: "{{ item.metadata.name }} {{ item.metadata.namespace }}"
+  with_items: '{{ vms.resources }}'

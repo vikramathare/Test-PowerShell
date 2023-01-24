@@ -7,6 +7,5 @@
     register: vms
 
   - name: Debug
-    debug:
-      msg: "{{ item.metadata.name }} {{ item.metadata.namespace }}"
+    include_tasks: task-1.yml
     with_items: '{{ vms.resources }}'
