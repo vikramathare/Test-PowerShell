@@ -1,3 +1,4 @@
 - name: Debug
   debug:
     msg: "name: {{ item.metadata.name }}"
+  when: item.metadata.name == 'vmpool-qjy39'
