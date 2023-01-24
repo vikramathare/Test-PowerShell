@@ -1,6 +1,19 @@
 - name: Debug
   debug:
-    msg: "{{ item.metadata.managedFields }}"
+    msg: "{{ item.metadata.managedFields[fieldsV1] }}"
   when: item.metadata.name == 'vmpool-qjy39'
 #  when: item.metadata.spec.current_vm_status == 'running' and item.metadata.spec.current_vm_state == 'present' 
 #    and item.metadata.spec.is_free and not item.metadata.spec.orphan
+
+# - name: UpdateStatus-StopVM-CR
+#   k8s:
+#     state: patched
+#     api_version: cache.vmpool.com/v1
+#     kind: VMConfig
+#     name: '{{ ansible_operator_meta.name}}' 
+#     namespace: '{{ ansible_operator_meta.namespace}}'
+#     definition:
+#       spec:
+#         desired_vm_status: stopped
+#   when: current_vm_status == 'running' and current_vm_state == 'present' 
+#     and is_free and not orphan
