@@ -1,5 +1,5 @@
 - name: Debug
   debug:
     msg: "name: {{ item.metadata.name }}"
-  when: current_vm_status == 'running' and current_vm_state == 'present' 
-    and is_free and not orphan
+  when: item.metadata.spec.current_vm_status == 'running' and item.metadata.spec.current_vm_state == 'present' 
+#    and item.metadata.spec.is_free and not item.metadata.spec.orphan
