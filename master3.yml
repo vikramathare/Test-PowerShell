@@ -9,4 +9,4 @@
   - name: Debug
     debug:
       msg: "{{ item.metadata.name }}"
-    with_items: "{{ item.metadata }}"
+    with_items: "{{ vms }}"
