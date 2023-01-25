@@ -5,7 +5,7 @@
     command: kubectl get vmconfig -o json | jq -r '.items[]'
     register: vms
 
-  - name: Debug
-    debug:
-      msg: "{{ item.metadata.name }}"
-    with_items: "{{ item.metadata }}"
+  # - name: Debug
+  #   debug:
+  #     msg: "{{ item.metadata.name }}"
+  #   with_items: "{{ item.metadata }}"
