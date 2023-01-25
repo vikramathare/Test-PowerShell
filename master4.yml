@@ -5,7 +5,7 @@
     k8s_info:
       api_version: cache.vmpool.com/v1
       kind: VMConfig
-      namespace: '{{ ansible_operator_meta.namespace}}'
+      namespace: sandbox-vmpool-operator-system
       name: vmpool-aaj85
     register: vms
 
