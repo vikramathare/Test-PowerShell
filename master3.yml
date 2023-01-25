@@ -2,7 +2,8 @@
   hosts: localhost
   tasks:
   - name: Get-VM-CR
-    command: "kubectl get vmconfig -o json | jq -r '.items[]'"
+    shell: 
+      "kubectl get vmconfig -o json | jq -r '.items[]'"
     register: vms
 
   # - name: Debug
