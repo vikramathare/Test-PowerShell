@@ -1,0 +1,12 @@
+- name: playbook
+  hosts: localhost
+  tasks:
+  - name: Get-VM-CR
+    kubernetes.core.k8s_info:
+      kind: VMConfig
+    register: vms
+
+  - name: Debug
+    debug:
+      msg: "{{ item.metadata.name }}"
+    with_items: item.metadata | json_query('name') == 'vmpool-qjy39'
