@@ -1,0 +1,4 @@
+- name: task-2
+  debug:
+    msg:
+    - '{{ item }}' 
