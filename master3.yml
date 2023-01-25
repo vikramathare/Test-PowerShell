@@ -2,11 +2,10 @@
   hosts: localhost
   tasks:
   - name: Get-VM-CR
-    kubernetes.core.k8s_info:
-      kind: VMConfig
+    command: kubectl get vmconfig -o json | jq -r '.items[] | select(.spec.host_name=="vmpool-aaj85") | select(.spec.current_vm_state=="present")'
     register: vms
 
   - name: Debug
     debug:
       msg: "{{ item.metadata.name }}"
-    with_items: "{{ item.metadata }}" | json_query('name') == 'vmpool-qjy39'
+    with_items: "{{ item.metadata }}"
