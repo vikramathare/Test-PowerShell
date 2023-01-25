@@ -3,10 +3,10 @@
   tasks:
   - name: Get-VM-CR
     shell: 
-      "kubectl get vmconfig -o json | jq -r '.items[]'"
+      "kubectl get vmconfig -o json | jq -r '.items[] | select(.spec.host_name==\"vmpool-aaj85\") | select(.spec.current_vm_state==\"present\")'"
     register: vms
 
   - name: Debug
     debug:
-      msg: "{{ item.metadata.name }}"
+      msg: "{{ vms }}"
     with_items: "{{ vms }}"
