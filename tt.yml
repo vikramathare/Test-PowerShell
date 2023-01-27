@@ -16,12 +16,12 @@
  
   - name: master-task2
     set_fact:
-      free_hot_vms: "{{ vms | json_query(query) }}[:3]"
+      free_hot_vms: "{{ vms | json_query(query) }}"
     vars:
       query: "resources[?(@.spec.current_vm_state=='present')].spec.host_name"
 
   - name: master-task3
     include_tasks: sub-task-1.yml
-    loop: "{{ free_hot_vms | flatten(levels=1) }}"
+    loop: "{{ free_hot_vms[0:4] | flatten(levels=1) }}"
     when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
           current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
