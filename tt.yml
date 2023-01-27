@@ -16,8 +16,9 @@
     set_fact:
       filtered_result: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[].spec.current_vm_state"
+      query: "resources[].spec"
 
   - name: DISPLAY FILTERED RESULTS
     debug:
       msg: "{{ filtered_result }}"
+    #when: 
