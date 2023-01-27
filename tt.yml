@@ -13,5 +13,4 @@
   - name: PtsVMPoolConfig-test-1-task2
     debug:
       msg:
-      - 'item: {{ item }}'
-    with_items: '{{ vms.resources }}'
+      - msg="{{ vms | jq -r '.items[] | select(.spec.host_name=="vmpool2-bnd15") }}"
