@@ -14,3 +14,4 @@
   - name: FILTER FOR POD NAME AND STATE
     debug:
       msg: "{{ vms }}"
+    with_

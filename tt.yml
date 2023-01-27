@@ -7,16 +7,12 @@
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
     register: vms
-
-  # - name: DISPLAY OUTPUT
-  #   debug:
-  #     msg: "{{ vms }}"
   
   - name: FILTER FOR POD NAME AND STATE
     set_fact:
       vms_list: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[].spec"
+      query: resources[?(@.spec.host_name=="vmpool2-bnd15" && @.spec.current_vm_state=="present")]
 
   - name: FILTER FOR POD NAME AND STATE
     debug:
