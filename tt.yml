@@ -13,7 +13,11 @@
   #     msg: "{{ vms }}"
   
   - name: FILTER FOR POD NAME AND STATE
-    debug:
-      msg: "{{ vms | json_query(query) }}"
+    set_fact:
+      vms_list: "{{ vms | json_query(query) }}"
     vars:
       query: "resources[].spec"
+
+  - name: FILTER FOR POD NAME AND STATE
+    debug:
+      msg: "{{ vms_list }}"
