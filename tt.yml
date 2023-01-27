@@ -22,7 +22,6 @@
 
   - name: master-task3
     include_tasks: sub-task-1.yml
+    loop: "{{ free_hot_vms | flatten(levels=1) }}"
     when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
           current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
-    loop: "{{ free_hot_vms | flatten(levels=1) }}"
-
