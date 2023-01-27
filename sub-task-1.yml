@@ -2,3 +2,7 @@
   debug:
     msg:
     - 'item: {{ item }}'
+
+- name: master-task2
+  set_fact:
+    current_num_cold_free_vms_var: 20
