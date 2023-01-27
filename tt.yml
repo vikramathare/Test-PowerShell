@@ -7,7 +7,7 @@
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
       field_selectors:
-      - spec.current_vm_status == 'running'
+      - spec.current_vm_status==running
     register: vms
 
   - name: PtsVMPoolConfig-test-1-task2
