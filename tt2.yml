@@ -2,16 +2,18 @@
   hosts: localhost
   tasks:
   - name: PtsVMPoolConfig-test-1-task1
-    command: kubectl get PtsVMControl -o jsonpath='{.items[?(@.spec.current_vm_state=="present")]}'
+    kubernetes.core.k8s_info:
+      api_version: vmpool-operator.slb.com/v1
+      kind: PtsVmControl
+      namespace: sandbox-vmpool-operator-system
     register: vms
 
-  # - name: FILTER FOR POD NAME AND STATE
-  #   set_fact:
-  #     vms_list: "{{ vms | json_query(query) }}"
-  #   vars:
-  #     query: "resources[].spec"
+  - name: FILTER FOR POD NAME AND STATE
+    set_fact:
+      vms_list: "{{ vms | json_query(query) }}"
+    vars:
+      query: "resources[].spec"
 
   - name: FILTER FOR POD NAME AND STATE
     debug:
-      msg: "{{ vms }}"
-    with_
+      msg: "{{ vms_list }}"
