@@ -1,7 +1,7 @@
 - name: Master-playbook
   hosts: localhost
   vars:
-  - current_num_cold_free_vms_var: 0
+  - current_num_cold_free_vms_var: 20
   - desired_num_cold_free_vms: 5
   - current_num_hot_free_vms_var: 10
   - desired_num_hot_free_vms: 5  
