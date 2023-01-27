@@ -1,5 +1,4 @@
 - name: child-playbook
-  hosts: localhost
   tasks:
   - name: child-task-1
     debug:
