@@ -20,8 +20,8 @@
     vars:
       query: "resources[?(@.spec.current_vm_state=='present' && 
                 @.spec.current_vm_status=='running' && 
-                @.spec.is_free)].spec.host_name &&
-                @.spec.orphan!=true)].spec.host_name"
+                @.spec.is_free &&
+                @.spec.orphan !=true)].spec.host_name"
 
 
   - name: master-task3
