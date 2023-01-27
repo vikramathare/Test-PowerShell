@@ -1,5 +1,11 @@
 - name: playbook
   hosts: localhost
+  vars:
+  - current_num_cold_free_vms_var: 0
+  - desired_num_cold_free_vms: 5
+  - current_num_hot_free_vms_var: 10
+  - desired_num_hot_free_vms: 5  
+
   tasks:
   - name: task1
     kubernetes.core.k8s_info:
@@ -7,13 +13,18 @@
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
     register: vms
-  
+ 
   - name: task2
     set_fact:
-      vms_list: "{{ vms | json_query(query) }}"
+      vms: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[?(@.spec.host_name=='vmpool2-bnd15' && @.spec.current_vm_state=='present')]"
+      query: "resources[?(@.spec.current_vm_state=='present' && 
+                @.spec.current_vm_status=='running')] &&
+                @.spec.is_free==true"
 
   - name: task3
     debug:
-      msg: "{{ vms_list }}"
+      msg: "{{ item }}"
+    when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
+            current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
+    loop: "{{ vms | flatten(levels=1) }}"
