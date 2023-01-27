@@ -20,10 +20,10 @@
     vars:
       query: "resources[?(@.spec.current_vm_state=='present' && 
                 @.spec.current_vm_status=='running' && 
-                @.spec.is_free)]"
+                @.spec.is_free)].spec.host_name"
 
   - name: master-task3
     include_tasks: sub-task-1.yml
     when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
               current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
-    loop: "{{ free_hot_vms.spec.host_name | flatten(levels=1) }}"
+    loop: "{{ free_hot_vms | flatten(levels=1) }}"
