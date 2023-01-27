@@ -16,16 +16,14 @@
  
   - name: task2
     set_fact:
-      vms: "{{ vms | json_query(query) }}"
+      vms_list: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[?(@.spec.current_vm_state=='present' && 
-                @.spec.current_vm_status=='running')] &&
-                @.spec.is_free==True"
+      query: "resources[?(@.spec.current_vm_state=='present' && @.spec.current_vm_status=='running' @.spec.is_free==True)]"
 
   - name: task3
     debug:
       msg: "{{ item }}"
-    with_items: "{{ vms }}"
+    with_items: "{{ vms_list.resources }}"
 
   # - name: task3
   #   debug:
