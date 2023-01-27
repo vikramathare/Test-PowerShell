@@ -1,0 +1,13 @@
+- name: playbook
+  hosts: localhost
+  vars:
+  - total_current_vms: 0
+  - total_desired_vms: 5
+  - current_max_num_vms: 0
+  - desired_max_num_vms: 30
+  tasks:
+  - name: master-task-1
+    include_tasks: task4.yml
+    when: total_current_vms | int < total_desired_vms and current_max_num_vms < desired_max_num_vms
+    loop: "{{ range(total_current_vms, total_desired_vms)|list }}"
+    index_var: index

@@ -1,0 +1,19 @@
+
+
+- name: playbook
+  hosts: localhost
+  vars:
+  - total_current_vms: 0
+  - total_desired_vms: 5
+  - current_max_num_vms: 0
+  - desired_max_num_vms: 30
+  tasks:
+  - name: master-task-1
+    include_tasks: task4.yml
+    when: "{{ item }} < 2"
+    loop: 
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5

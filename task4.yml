@@ -1,0 +1,9 @@
+- name: task-1
+  set_fact:
+    total_current_vms: "{{ total_current_vms | int + 2 }}"
+
+- name: task-2
+  debug:
+    msg:
+    - 'total_current_vms: {{ total_current_vms }}'
+    - 'item: {{ index }}'

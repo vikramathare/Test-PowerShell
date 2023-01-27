@@ -1,0 +1,17 @@
+- name: playbook
+  hosts: localhost
+  tasks:
+  - name: PtsVMPoolConfig-test-1-task1
+    kubernetes.core.k8s_info:
+      api_version: vmpool-operator.slb.com/v1
+      kind: PtsVmControl
+      namespace: sandbox-vmpool-operator-system
+      #field_selectors:
+      # - spec.current_vm_status == 'running'
+    register: vms
+
+  - name: PtsVMPoolConfig-test-1-task2
+    debug:
+      msg:
+      - 'item: {{ item }}'
+    with_items: '{{ vms.resources }}'

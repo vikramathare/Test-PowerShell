@@ -1,0 +1,13 @@
+- name: playbook
+  hosts: localhost
+  vars:
+  - id: 11
+  tasks:
+  - name: PtsVMPoolConfig-Set-VMName
+    set_fact:
+      host_name: "vmpool{{ id }}-{{ lookup('password', '/dev/null chars=ascii_letters,digit length=3') | lower }}{{ 100 | random }}"
+  
+  - name: task-2
+    debug:
+      msg:
+      - 'host_name: {{ host_name  }}'
