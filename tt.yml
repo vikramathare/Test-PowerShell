@@ -18,8 +18,7 @@
     set_fact:
       free_hot_vms: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[?(@.spec.current_vm_state=='present' && 
-                @.spec.current_vm_status=='stopped' && 
+      query: "resources[?(@.spec.current_vm_state=='present' &&
                 @.spec.is_free)].spec.host_name"
 
   - name: master-task3
