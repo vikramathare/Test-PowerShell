@@ -6,11 +6,14 @@
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
-      field_selectors:
-      - spec.current_vm_status==running
     register: vms
+  
+  - name: FILTER FOR POD NAME AND STATE
+    set_fact:
+      filtered_result: "{{ vms | json_query(query) }}"
+    vars:
+      query: "resources[].{spec.current_vm_state=="present"}"
 
-  - name: PtsVMPoolConfig-test-1-task2
+  - name: DISPLAY FILTERED RESULTS
     debug:
-      msg:
-      - msg="{{ vms | jq -r '.items[] | select(.spec.host_name=="vmpool2-bnd15") }}"
+      msg: "{{ filtered_result }}"
