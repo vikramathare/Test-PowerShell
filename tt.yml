@@ -1,4 +1,4 @@
-- name: playbook
+- name: Master-playbook
   hosts: localhost
   vars:
   - current_num_cold_free_vms_var: 0
@@ -7,14 +7,14 @@
   - desired_num_hot_free_vms: 5  
 
   tasks:
-  - name: task1
+  - name: master-task1
     kubernetes.core.k8s_info:
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
     register: vms
  
-  - name: task2
+  - name: master-task2
     set_fact:
       free_hot_vms: "{{ vms | json_query(query) }}"
     vars:
@@ -22,7 +22,7 @@
                 @.spec.current_vm_status=='running' && 
                 @.spec.is_free)]"
 
-  - name: task3
+  - name: master-task3
     include_tasks: sub-task-1.yml
     when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
               current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
