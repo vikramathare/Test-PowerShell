@@ -20,14 +20,14 @@
     vars:
       query: "resources[?(@.spec.current_vm_state=='present' && @.spec.current_vm_status=='running' && @.spec.is_free)]"
 
-  - name: task3
-    debug:
-      msg: "{{ item }}"
-    with_items: "{{ vms_list }}"
-
   # - name: task3
   #   debug:
   #     msg: "{{ item }}"
-  #   when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
-  #           current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
-  #   loop: "{{ vms | flatten(levels=1) }}"
+  #   with_items: "{{ vms_list }}"
+
+  - name: task3
+    debug:
+      msg: "{{ item }}"
+    when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
+            current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
+    loop: "{{ vms_list | flatten(levels=1) }}"
