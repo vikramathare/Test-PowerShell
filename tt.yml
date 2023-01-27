@@ -20,7 +20,7 @@
     vars:
       query: "resources[?(@.spec.current_vm_state=='present' && 
                 @.spec.current_vm_status=='running')] &&
-                @.spec.is_free==true"
+                @.spec.is_free==True"
 
   - name: task3
     debug:
