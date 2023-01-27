@@ -16,18 +16,14 @@
  
   - name: task2
     set_fact:
-      vms_list: "{{ vms | json_query(query) }}"
+      free_hot_vms: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[?(@.spec.current_vm_state=='present' && @.spec.current_vm_status=='running' && @.spec.is_free)]"
-
-  # - name: task3
-  #   debug:
-  #     msg: "{{ item }}"
-  #   with_items: "{{ vms_list }}"
+      query: "resources[?(@.spec.current_vm_state=='present' && 
+                @.spec.current_vm_status=='running' && 
+                @.spec.is_free)]"
 
   - name: task3
-    debug:
-      msg: "{{ item }}"
+    include_tasks: sub-task-1.yml
     when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
-            current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
-    loop: "{{ vms_list | flatten(levels=1) }}"
+              current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
+    loop: "{{ free_hot_vms | flatten(levels=1) }}"

@@ -1,0 +1,8 @@
+- name: playbook
+  hosts: localhost
+  tasks:
+  - name: item
+    debug:
+      msg:
+      - 'item: {{ item }}'
+      - 'item_name: {{ item.host_name }}'
