@@ -1,7 +1,7 @@
-- name: playbook
+- name: child-playbook
   hosts: localhost
   tasks:
-  - name: item
+  - name: child-task-1
     debug:
       msg:
       - 'item: {{ item }}'
