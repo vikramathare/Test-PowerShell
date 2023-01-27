@@ -1,6 +1,5 @@
-  tasks:
-  - name: child-task-1
-    debug:
-      msg:
-      - 'item: {{ item }}'
-      - 'item_name: {{ item.host_name }}'
+- name: child-task-1
+  debug:
+    msg:
+    - 'item: {{ item }}'
+    - 'item_name: {{ item.host_name }}'
