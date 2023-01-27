@@ -1,8 +1,9 @@
+- name: master-task2
+  set_fact:
+    current_num_cold_free_vms_var: 20
+
 - name: child-task-1
   debug:
     msg:
     - 'item: {{ item }}'
-
-- name: master-task2
-  set_fact:
-    current_num_cold_free_vms_var: 20
+    - 'current_num_cold_free_vms_var: {{ current_num_cold_free_vms_var }}'
