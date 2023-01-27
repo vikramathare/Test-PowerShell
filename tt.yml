@@ -13,12 +13,7 @@
   #     msg: "{{ vms }}"
   
   - name: FILTER FOR POD NAME AND STATE
-    set_fact:
-      vms_spec: "{{ vms | json_query(query) }}"
-    vars:
-      query: "resources[]"
-
-  - name: DISPLAY FILTERED RESULTS
     debug:
-      msg: "{{ vms_spec }}"
-    when: "{{vms_spec.spec.host_name == 'vmpool2-xhz20'}}"
+      msg: "{{ vms | json_query(query) }}"
+    vars:
+      query: "resources[].spec"
