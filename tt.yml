@@ -16,9 +16,9 @@
     set_fact:
       vms_spec: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[].spec"
+      query: "resources[]"
 
   - name: DISPLAY FILTERED RESULTS
     debug:
       msg: "{{ vms_spec }}"
-    when: "{{vms_spec.host_name == 'vmpool2-xhz20'}}"
+    when: "{{vms_spec.spec.host_name == 'vmpool2-xhz20'}}"
