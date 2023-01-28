@@ -26,7 +26,7 @@
 
   - name: master-task3
     include_tasks: sub-task-1.yml
-    with_items: '{{ free_hot_vms[0] }}'
+    with_items: '{{ free_hot_vms[0:10] }}'
     when: current_num_cold_free_vms_var | int < desired_num_cold_free_vms | int and
           current_num_hot_free_vms_var | int > desired_num_hot_free_vms | int
 
