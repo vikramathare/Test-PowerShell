@@ -3,7 +3,7 @@
   vars:
   - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
   - project_id: stratus-p4d-preview
-  - vm_name: vm-kdhali
+  - vm_name: vm-kdhali-1
   - token: ya29.a0AVvZVsqinyptx0Bc6-TEPchW4REQz_oTfDo_eAOnlP7siJImhdtPVXdiFxO88lUUdBkB3z65KQHwWgueHbuPXKMfo05ECXO4i1Evv9QlIdneTcHhgcpqReYO0KFqeXRS2CM4xp2PRDEjzzX4cRZf0jPstwQgl6waCgYKAUQSARASFQGbdwaIDwVyn2EB8UrX6cGmAan7qA0166
   - user_profile: drillopseng-base
   - vm_sysprep_version: 8.2.27.21-rearch
