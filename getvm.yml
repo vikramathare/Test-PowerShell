@@ -17,7 +17,7 @@
       status_code: 204
     register: getvm
 
-- name: PtsVmControl-Update-VM-End
-  debug:
-    msg: 
-    - 'getvm: {{ getvm }}'
+  - name: PtsVmControl-Update-VM-End
+    debug:
+      msg: 
+      - 'getvm: {{ getvm }}'
