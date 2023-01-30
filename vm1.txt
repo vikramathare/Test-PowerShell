@@ -1,0 +1,1157 @@
+{
+	"api_found": true,
+	"changed": false,
+	"failed": false,
+	"resources": [{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:08:20Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:09:09Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:10:12Z"
+					}
+				],
+				"name": "vmpool2-bnd15",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198456",
+				"uid": "4fea58a1-09ec-4d3e-988e-3439457d5fb1"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-bnd15",
+				"session_id": 1,
+				"is_free": false,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:09:13Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:10:10.609046",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:08:39Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:10:12Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:08:40Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:09:47Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:11:00Z"
+					}
+				],
+				"name": "vmpool2-fzd20",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198573",
+				"uid": "a2f41c26-449e-4b03-b54b-87edec5ada17"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-fzd20",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:09:51Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:10:58.498368",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:09:14Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:11:00Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:09:16Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:10:19Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:11:33Z"
+					}
+				],
+				"name": "vmpool2-gxa70",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198654",
+				"uid": "29a23fc3-f2a0-4841-9d79-a636b688958e"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-gxa70",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:10:25Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:11:32.014967",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:09:51Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:11:33Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:07:47Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:08:17Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:09:03Z"
+					}
+				],
+				"name": "vmpool2-hav70",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198287",
+				"uid": "3e1e330e-f0dc-42da-b2de-e8d9fc1586bb"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-hav70",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:08:22Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:09:01.122804",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:07:47Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:09:03Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:09:37Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:10:36Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:11:50Z"
+					}
+				],
+				"name": "vmpool2-ihr90",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198697",
+				"uid": "969a90e9-5efc-4a42-95ed-8198b0fe7cb8"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-ihr90",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:10:40Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:11:48.51554",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:10:12Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:11:50Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:07:36Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:07:59Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:08:41Z"
+					}
+				],
+				"name": "vmpool2-lav51",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198236",
+				"uid": "383908fc-b5d6-4f81-8342-2777702309cf"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-lav51",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:08:04Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:08:40.517043",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:07:36Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:08:41Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:09:58Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:11:08Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:11:49Z"
+					}
+				],
+				"name": "vmpool2-pny33",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198693",
+				"uid": "e91d94fd-85db-4f9c-957b-a68ab843a080"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-pny33",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:11:13Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:11:47.91562",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:10:42Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:11:49Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:08:58Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:09:45Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:10:42Z"
+					}
+				],
+				"name": "vmpool2-tui81",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198532",
+				"uid": "280db84b-761b-48a8-a3a9-5c5b6df2d454"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-tui81",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:09:50Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:10:40.006462",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:09:20Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:10:42Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:10:15Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:11:26Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:12:01Z"
+					}
+				],
+				"name": "vmpool2-xhz20",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198721",
+				"uid": "ef07d094-9a82-4e86-b9eb-7dfec504ab97"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-xhz20",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:11:31Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:12:00.500029",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:11:00Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:12:01Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		},
+		{
+			"apiVersion": "vmpool-operator.slb.com/v1",
+			"kind": "PtsVmControl",
+			"metadata": {
+				"creationTimestamp": "2023-01-27T11:08:04Z",
+				"generation": 2,
+				"labels": {
+					"app.kubernetes.io/created-by": "sandbox-vmpool-operator",
+					"app.kubernetes.io/instance": "vmconfig-sample",
+					"app.kubernetes.io/managed-by": "kustomize",
+					"app.kubernetes.io/name": "vmconfig",
+					"app.kubernetes.io/part-of": "sandbox-vmpool-operator"
+				},
+				"managedFields": [{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:metadata": {
+								"f:labels": {
+									".": {},
+									"f:app.kubernetes.io/created-by": {},
+									"f:app.kubernetes.io/instance": {},
+									"f:app.kubernetes.io/managed-by": {},
+									"f:app.kubernetes.io/name": {},
+									"f:app.kubernetes.io/part-of": {}
+								},
+								"f:ownerReferences": {
+									".": {},
+									"k:{\"uid\":\"880c3f32-208e-46f1-8024-3e5329c2e895\"}": {}
+								}
+							},
+							"f:spec": {
+								".": {},
+								"f:current_vm_state": {},
+								"f:current_vm_status": {},
+								"f:desired_vm_state": {},
+								"f:desired_vm_status": {},
+								"f:host_name": {},
+								"f:is_free": {},
+								"f:orphan": {},
+								"f:project_id": {}
+							}
+						},
+						"manager": "OpenAPI-Generator",
+						"operation": "Update",
+						"time": "2023-01-27T11:08:34Z"
+					},
+					{
+						"apiVersion": "vmpool-operator.slb.com/v1",
+						"fieldsType": "FieldsV1",
+						"fieldsV1": {
+							"f:status": {
+								".": {},
+								"f:conditions": {}
+							}
+						},
+						"manager": "ansible-operator",
+						"operation": "Update",
+						"subresource": "status",
+						"time": "2023-01-27T11:09:20Z"
+					}
+				],
+				"name": "vmpool2-xwt59",
+				"namespace": "sandbox-vmpool-operator-system",
+				"ownerReferences": [{
+					"apiVersion": "vmpool-operator.slb.com/v1",
+					"kind": "PtsVMPoolConfig",
+					"name": "vmpool2",
+					"uid": "880c3f32-208e-46f1-8024-3e5329c2e895"
+				}],
+				"resourceVersion": "198330",
+				"uid": "a70cf1ad-2070-4254-86b5-34e3ebd3ddee"
+			},
+			"spec": {
+				"current_vm_state": "present",
+				"current_vm_status": "running",
+				"desired_vm_state": "present",
+				"desired_vm_status": "running",
+				"host_name": "vmpool2-xwt59",
+				"is_free": true,
+				"orphan": false,
+				"project_id": "stratus-project-1"
+			},
+			"status": {
+				"conditions": [{
+						"lastTransitionTime": "2023-01-27T11:08:39Z",
+						"message": "",
+						"reason": "",
+						"status": "False",
+						"type": "Failure"
+					},
+					{
+						"ansibleResult": {
+							"changed": 0,
+							"completion": "2023-01-27T11:09:18.207953",
+							"failures": 0,
+							"ok": 0,
+							"skipped": 4
+						},
+						"lastTransitionTime": "2023-01-27T11:08:04Z",
+						"message": "Awaiting next reconciliation",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Running"
+					},
+					{
+						"lastTransitionTime": "2023-01-27T11:09:20Z",
+						"message": "Last reconciliation succeeded",
+						"reason": "Successful",
+						"status": "True",
+						"type": "Successful"
+					}
+				]
+			}
+		}
+	]
+}

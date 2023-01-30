@@ -1,0 +1,23 @@
+- name: playbook
+  hosts: localhost
+  vars:
+  - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
+  - project_id: stratus-p4d-preview
+  - vm_name: p4d-3
+  - token: ya29.a0AVvZVsqdw1lAYazHWAfOBs84pAImoSCqx_-LGuGtNkq5lXiIQAMerA8YMIhhwmO9EosTKLfKy0ViLfKL7zUC1ik-SpN_ycehrN8w5UkYQllElqj85QSoFeeKh1SEFMDd1W3Fe4U0onfHIEXTSy8X-norTMFaPwoaCgYKAfUSARASFQGbdwaIugj7aHmssMuhTx9xVjV-6g0166
+
+  tasks:
+  - name: PtsVmControl-Get-VM
+    uri:
+      url: '{{ provisioning_uri }}/projects/{{ project_id }}/vminstances/{{ vm_name }}'
+      method: GET
+      headers:
+        Authorization: "Bearer {{ token }}"
+      timeout: 180
+      status_code: 204
+    register: getvm
+
+- name: PtsVmControl-Update-VM-End
+  debug:
+    msg: 
+    - 'getvm: {{ getvm }}'
