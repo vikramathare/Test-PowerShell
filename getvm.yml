@@ -19,7 +19,7 @@
 
   - name: task-2
     set_fact:
-      getvm2: "{{ getvm | vm_name_query(query) }}"
+      getvm2: "{{ getvm | json_query(query) }}"
     vars:
       query: "$.status"
 
