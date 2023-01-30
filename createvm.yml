@@ -35,10 +35,8 @@
             }
         }
       headers:
+        #Content-Type: application/json
         Authorization: "Bearer {{ token }}"
-      headers:
-        Content-Type: application/json
-      headers:
-        accept: application/json
+        #accept: application/json
       status_code: 202
       timeout: 180
