@@ -7,7 +7,7 @@
   - token: ya29.a0AVvZVsr3-1oLKnpO_SCJjfv4HPZPW_05rq_L0jS1VJMJvbethh_2GMOc-y1HzPgJ_E3kBjAg9ZNsRl93XApqrDGvynGC21MJ8_rWWdZk6osGTAgtNnvChalPZ-Bvwc1fR2p0T0Kux-I3qUaAyg_asa-T3oVYdMIaCgYKAQ0SARASFQGbdwaIuOuVWT9j7_IqXH3qdFR2CA0166
 
   tasks:
-  - name: PtsVmControl-Get-VM
+  - name: task-1
     uri:
       url: '{{ provisioning_uri }}/projects/{{ project_id }}/vminstances/{{ vm_name }}'
       method: GET
@@ -17,7 +17,13 @@
       status_code: 200
     register: getvm
 
-  - name: PtsVmControl-Update-VM-End
+  - name: task-2
+    set_fact:
+      getvm2: "{{ getvm | vm_name_query(query) }}"
+    vars:
+      query: "$.status"
+
+  - name: task-3
     debug:
       msg: 
-      - 'getvm: {{ getvm }}'
+      - 'getvm: {{ getvm2 }}'
