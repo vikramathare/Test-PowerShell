@@ -4,39 +4,40 @@
   - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
   - project_id: stratus-p4d-preview
   - vm_name: vm-kdhali
-  - token: ya29.a0AVvZVsr3-1oLKnpO_SCJjfv4HPZPW_05rq_L0jS1VJMJvbethh_2GMOc-y1HzPgJ_E3kBjAg9ZNsRl93XApqrDGvynGC21MJ8_rWWdZk6osGTAgtNnvChalPZ-Bvwc1fR2p0T0Kux-I3qUaAyg_asa-T3oVYdMIaCgYKAQ0SARASFQGbdwaIuOuVWT9j7_IqXH3qdFR2CA0166
+  - token: ya29.a0AVvZVsqinyptx0Bc6-TEPchW4REQz_oTfDo_eAOnlP7siJImhdtPVXdiFxO88lUUdBkB3z65KQHwWgueHbuPXKMfo05ECXO4i1Evv9QlIdneTcHhgcpqReYO0KFqeXRS2CM4xp2PRDEjzzX4cRZf0jPstwQgl6waCgYKAUQSARASFQGbdwaIDwVyn2EB8UrX6cGmAan7qA0166
   - user_profile: drillopseng-base
   - vm_sysprep_version: 8.2.27.21-rearch
   - vmPoolAgentSauthClientSecret: lmpvPQKaIzkOHJswm4n8BsyRutijZTzAsCeqa3GhYEtUDvHbllKSjQwiloy80BO2jCy30tYRdfBOCiGiozwfBB7N-FaZ2As1qub-weZhbsaPIILeMJBYmEscuX9hgEaQ751FI-AyI3dVDhz54A4Y3MA-KJDvSvQJpPrEvkuodmRlqtxhS9RNL8lk8E9_BS2NKehZOE-LaJA4sb0nJkUwKB5yfUqPgCvT9tdZmxh_XJ5aGsedTeZr8FokKxqrQatTHQruCxU0z5gpGLetzPikbetPlOx9P5D3GQKPh5ERRTITGmivCbzJvY3j0XkcUU1y3Fv9AS9bJcKJvp_a2c70hQ
   - vmPoolAgentSauthClientId: 8c28d6ada84740d2aef50ea65e623c5d
 
   tasks:
-  # - name: task-1
-  #   uri:
-  #     url: '{{ provisioning_uri }}/projects/{{ project_id }}/vminstances'
-  #     method: POST
-  #     body_format: json
-  #     body: |-
-  #       {
-  #         "name": "{{ vm_name }}",
-  #         "userProfile": "{{ user_profile }}",
-  #         "dataDiskSizeGb": 100,
-  #         "updateStatusMode": "PATCH",
-  #         "version": "{{ vm_sysprep_version }}",
-  #         "metadata": {
-  #             "vmPoolAgentSauthClientId": "{{ vmPoolAgentSauthClientId }}",
-  #             "vmPoolAgentSauthClientSecret": "{{ vmPoolAgentSauthClientSecret }}",
-  #             "IsVMPoolVM": "true"
-  #           }
-  #       }
-  #     headers:
-  #       Authorizaion: "Bearer {{ token }}"
-  #       Content-Type: application/json
-  #       accept: application/json
-  #     status_code: 202
-  #     timeout: 180
-
-  - name: task-2
+  - name: task-1
     debug:
       msg: 
       - '{"name":"{{ vm_name }}","userProfile":"{{ user_profile }}","dataDiskSizeGb":100,"updateStatusMode":"PATCH","version":"{{ vm_sysprep_version }}","metadata":{"vmPoolAgentSauthClientId":"{{ vmPoolAgentSauthClientId }}","vmPoolAgentSauthClientSecret":"{{ vmPoolAgentSauthClientSecret }}","IsVMPoolVM":"true"}}'
+
+  - name: task-2
+    uri:
+      url: '{{ provisioning_uri }}/projects/{{ project_id }}/vminstances'
+      method: POST
+      body_format: json
+      body: |-
+        {
+          "name": "{{ vm_name }}",
+          "userProfile": "{{ user_profile }}",
+          "dataDiskSizeGb": 100,
+          "updateStatusMode": "PATCH",
+          "version": "{{ vm_sysprep_version }}",
+          "metadata": {
+              "vmPoolAgentSauthClientId": "{{ vmPoolAgentSauthClientId }}",
+              "vmPoolAgentSauthClientSecret": "{{ vmPoolAgentSauthClientSecret }}",
+              "IsVMPoolVM": "true"
+            }
+        }
+      headers:
+        Authorizaion: "Bearer {{ token }}"
+        Content-Type: application/json
+        accept: application/json
+      status_code: 202
+      timeout: 180
+
