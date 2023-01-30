@@ -17,13 +17,13 @@
       status_code: 200
     register: getvm
 
-  - name: task-2
-    set_fact:
-      getvm2: "{{ getvm | json_query(query) }}"
-    vars:
-      query: ".status"
+  # - name: task-2
+  #   set_fact:
+  #     getvm2: "{{ getvm | json_query(query) }}"
+  #   vars:
+  #     query: ".status"
 
   - name: task-3
     debug:
       msg: 
-      - 'getvm: {{ getvm2 }}'
+      - 'getvm: {{ getvm.json.status }}'
