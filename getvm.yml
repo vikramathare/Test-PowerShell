@@ -14,7 +14,7 @@
       headers:
         Authorization: "Bearer {{ token }}"
       timeout: 180
-      status_code: 204
+      status_code: 200
     register: getvm
 
   - name: PtsVmControl-Update-VM-End
