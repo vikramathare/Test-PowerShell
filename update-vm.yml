@@ -28,12 +28,12 @@
       msg: 
       - 'status: {{ getvm }}'
 
-  - name: task-3
+  - name: task-4
     debug:
       msg: 
       - 'status: {{ getvm.json.status }}'
 
-  - name: task-4
+  - name: task-5
     debug:
       msg: 
       - 'getvm4: {{ getvm.json.status }}'
