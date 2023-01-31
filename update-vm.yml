@@ -23,7 +23,7 @@
       msg: 
       - 'getvm: {{ getvm.json }}'
   
-   - name: task-3
+  - name: task-3
     debug:
       msg: 
       - 'status: {{ getvm.json.status }}'
