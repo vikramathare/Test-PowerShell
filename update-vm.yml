@@ -44,4 +44,4 @@
     debug:
       msg: 
       - 'getvm6: {{ getvm.json.status }}'
-    when: getvm.status == 200 and getvm.json.status == 'CLOUD VM STATUS{{:}} PowerState/deallocated'
+    when: "getvm.status == 200 and getvm.json.status == 'CLOUD VM STATUS: PowerState/deallocated'"
