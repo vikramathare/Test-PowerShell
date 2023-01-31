@@ -31,4 +31,5 @@
   - name: task-4
     debug:
       msg: 
-      - 'status_code: {{ getvm.json.status_code }}'
+      - 'getvm4: {{ getvm.json.status }}'
+    when: status_code == 400
