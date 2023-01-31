@@ -32,6 +32,7 @@
     debug:
       msg: 
       - 'status: {{ getvm.json.status }}'
+    when: statusCode == 401
 
   - name: task-5
     debug:
