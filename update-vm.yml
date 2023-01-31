@@ -3,8 +3,8 @@
   hosts: localhost
   vars:
   - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
-  - project_id: stratus-p4d-preview
-  - vm_name: vm-kdhali
+  - project_id: stratus-vmpool-testdev02
+  - vm_name: vm-healthcheck
   - token: ya29.a0AVvZVsp4Xyy-ZvnAU01afwSD23U0wgGh4_pPpbxCo_MyudQNSLYJleUGh-uyilsa0EVXAfKjrXPmOwk0ICTF7SIxYvN5rxqtJR7xTXGTFeLbxVnjvNiFS-6uAM0UGBLIoMdlu0j_lFZ-yf3mA6ZyNXQ1azncPZEaCgYKAZISARASFQGbdwaIkLjNu2PUaayZ-Wfgi7dLTw0166
 
   tasks:
@@ -15,9 +15,9 @@
       headers:
         Authorization: "Bearer {{ token }}"
       timeout: 180
-      failed_when: false
+    failed_when: false
     register: getvm
-  
+
   - name: task-3
     debug:
       msg: 
