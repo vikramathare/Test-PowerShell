@@ -22,7 +22,7 @@
     debug:
       msg: 
       - 'getvm: {{ getvm.json }}'
-  
+
   - name: task-3
     debug:
       msg: 
@@ -32,7 +32,7 @@
     debug:
       msg: 
       - 'status: {{ getvm.json.status }}'
-    when: getvm.statusCode == 401
+    when: getvm.json.statusCode == 401
 
   - name: task-5
     debug:
