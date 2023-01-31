@@ -5,7 +5,7 @@
   - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
   - project_id: stratus-vmpool-testdev02
   - vm_name: vm-healthcheck
-  - token: ya29.a0AVvZVsp4Xyy-ZvnAU01afwSD23U0wgGh4_pPpbxCo_MyudQNSLYJleUGh-uyilsa0EVXAfKjrXPmOwk0ICTF7SIxYvN5rxqtJR7xTXGTFeLbxVnjvNiFS-6uAM0UGBLIoMdlu0j_lFZ-yf3mA6ZyNXQ1azncPZEaCgYKAZISARASFQGbdwaIkLjNu2PUaayZ-Wfgi7dLTw0166
+  - token: ya29.a0AVvZVsp_ue_JVd8pZStCDQZHDQHqt7cf7DkDUrTeJo_mquiVvoq38wTDOx8quc4kgZwUdlDc77-nNFM_iJTOK0n6MCfLomilba1ZNlbqNL9U06hoUFPDGYHtIRWnNso_wbcC8Sdrn-hhnlsIMwf1F3Zjm7w-1CUaCgYKAbsSARASFQGbdwaIco9HmzmYISKLLOwByGGIcA0166
 
   tasks:
   - name: task-1
