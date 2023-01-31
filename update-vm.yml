@@ -28,8 +28,13 @@
       msg: 
       - 'status: {{ getvm.json.status }}'
 
+  - name: task-3
+    debug:
+      msg: 
+      - 'status: {{ getvm }}'
+
   - name: task-4
     debug:
       msg: 
       - 'getvm4: {{ getvm.json.status }}'
-    when: status_code == 400
+    when: getvm == 400
