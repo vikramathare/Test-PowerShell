@@ -31,11 +31,11 @@
   - name: task-4
     debug:
       msg: 
-      - 'status: {{ getvm.json.status }}'
+      - 'status: {{ getvm.json }}'
     when: getvm.status == 401
 
   - name: task-5
     debug:
       msg: 
-      - 'getvm4: {{ getvm.json.status }}'
+      - 'getvm4: {{ getvm.json }}'
     when: getvm.status == 400
