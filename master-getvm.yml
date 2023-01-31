@@ -1,0 +1,13 @@
+- name: playbook
+  hosts: localhost
+  vars:
+  - vmready: false
+  - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
+  - project_id: stratus-p4d-vmpool-01
+  - vm_name: vmpool3-fvq62
+  - token: ya29.a0AVvZVsry5ftr5edS4ew4FmvVLC95tovZMnsddvTS0-zSuPukvZISPvXnU3MqWKrWVKBE-eDrgPAMYOvHGj8HlJ0SijrQBG7_YSu6r91uXA44yS_zWdy_9fCteIGD9m5BFp9GjmRoCVDz5CEJP8V2XWLwzwEFFpcaCgYKAQoSARASFQGbdwaIWTtUbS5BpyErY9gaxLSO9Q0166
+  tasks:
+  - name: master-task-1
+    include_tasks: modules/create_vm.yml
+    until: vmready == true
+    delay: 10

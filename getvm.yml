@@ -1,28 +1,20 @@
-- name: playbook
-  hosts: localhost
-  vars:
-  - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
-  - project_id: stratus-p4d-vmpool-01
-  - vm_name: vmpool3-fvq62 
-  - token: ya29.a0AVvZVsry5ftr5edS4ew4FmvVLC95tovZMnsddvTS0-zSuPukvZISPvXnU3MqWKrWVKBE-eDrgPAMYOvHGj8HlJ0SijrQBG7_YSu6r91uXA44yS_zWdy_9fCteIGD9m5BFp9GjmRoCVDz5CEJP8V2XWLwzwEFFpcaCgYKAQoSARASFQGbdwaIWTtUbS5BpyErY9gaxLSO9Q0166
+---
+- name: task-1
+  uri:
+    url: '{{ provisioning_uri }}/projects/{{ project_id }}/vminstances/{{ vm_name }}'
+    method: GET
+    headers:
+      Authorization: "Bearer {{ token }}"
+    timeout: 180
+    status_code: 200
+  register: getvm
 
-  tasks:
-  - name: task-1
-    uri:
-      url: '{{ provisioning_uri }}/projects/{{ project_id }}/vminstances/{{ vm_name }}'
-      method: GET
-      headers:
-        Authorization: "Bearer {{ token }}"
-      timeout: 180
-      status_code: 200
-    register: getvm
+- name: task-2
+  debug:
+    msg: 
+    - 'getvm_status: {{ getvm.json.status }}'
 
-  - name: task-2
-    debug:
-      msg: 
-      - 'getvm_status: {{ getvm.json.status }}'
-
-  - name: task-3
-    ansible.builtin.copy:
-      content: "{{ getvm.json.status }}"
-      dest: "/home/stratusadmin/vm.status.log"
+- name: task-3
+  ansible.builtin.copy:
+    content: "{{ getvm.json.status }}"
+    dest: "/home/stratusadmin/vm.status.log"
