@@ -4,7 +4,7 @@
   - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
   - project_id: stratus-p4d-preview
   - vm_name: vm-kdhali
-  - token: ya29.a0AVvZVsqinyptx0Bc6-TEPchW4REQz_oTfDo_eAOnlP7siJImhdtPVXdiFxO88lUUdBkB3z65KQHwWgueHbuPXKMfo05ECXO4i1Evv9QlIdneTcHhgcpqReYO0KFqeXRS2CM4xp2PRDEjzzX4cRZf0jPstwQgl6waCgYKAUQSARASFQGbdwaIDwVyn2EB8UrX6cGmAan7qA0166
+  - token: ya29.a0AVvZVsry5ftr5edS4ew4FmvVLC95tovZMnsddvTS0-zSuPukvZISPvXnU3MqWKrWVKBE-eDrgPAMYOvHGj8HlJ0SijrQBG7_YSu6r91uXA44yS_zWdy_9fCteIGD9m5BFp9GjmRoCVDz5CEJP8V2XWLwzwEFFpcaCgYKAQoSARASFQGbdwaIWTtUbS5BpyErY9gaxLSO9Q0166
 
   tasks:
   - name: task-1
