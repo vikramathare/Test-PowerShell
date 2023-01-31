@@ -18,12 +18,17 @@
     failed_when: false
     register: getvm
 
-  - name: task-3
+  - name: task-2
+    debug:
+      msg: 
+      - 'getvm: {{ getvm.json }}'
+  
+   - name: task-3
     debug:
       msg: 
       - 'status: {{ getvm.json.status }}'
 
-  - name: task-3
+  - name: task-4
     debug:
       msg: 
-      - 'getvm: {{ getvm.json }}'
+      - 'status_code: {{ getvm.json.status_code }}'
