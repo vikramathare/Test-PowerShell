@@ -10,4 +10,3 @@
   - name: master-task-1
     include_tasks: modules/create_vm.yml
     until: vmready == true
-    delay: 10
