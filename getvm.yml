@@ -21,3 +21,8 @@
     debug:
       msg: 
       - 'getvm_status: {{ getvm.json.status }}'
+
+  - name: task-3
+    ansible.builtin.copy:
+      content: "{{ fruit }}"
+      dest: "/home/stratusadmin/vm.status.log"
