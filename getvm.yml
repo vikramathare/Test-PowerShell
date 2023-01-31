@@ -2,8 +2,8 @@
   hosts: localhost
   vars:
   - provisioning_uri: https://pitc-shared-stage.uc.r.appspot.com/api/v1
-  - project_id: stratus-p4d-preview
-  - vm_name: vm-kdhali
+  - project_id: stratus-p4d-vmpool-01
+  - vm_name: vmpool3-fub83
   - token: ya29.a0AVvZVsry5ftr5edS4ew4FmvVLC95tovZMnsddvTS0-zSuPukvZISPvXnU3MqWKrWVKBE-eDrgPAMYOvHGj8HlJ0SijrQBG7_YSu6r91uXA44yS_zWdy_9fCteIGD9m5BFp9GjmRoCVDz5CEJP8V2XWLwzwEFFpcaCgYKAQoSARASFQGbdwaIWTtUbS5BpyErY9gaxLSO9Q0166
 
   tasks:
@@ -17,13 +17,7 @@
       status_code: 200
     register: getvm
 
-  # - name: task-2
-  #   set_fact:
-  #     getvm2: "{{ getvm | json_query(query) }}"
-  #   vars:
-  #     query: ".status"
-
-  - name: task-3
+  - name: task-2
     debug:
       msg: 
-      - 'getvm: {{ getvm.json.status }}'
+      - 'getvm_status: {{ getvm.json.status }}'
