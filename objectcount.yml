@@ -1,0 +1,26 @@
+- name: playbook
+  hosts: localhost
+  tasks:
+  - name: task-1
+    kubernetes.core.k8s_info:
+      api_version: vmpool-operator.slb.com/v1
+      kind: PtsVmControl
+      namespace: sandbox-vmpool-operator-system
+    register: vms
+
+  - name: task-2
+    set_fact:
+      current_num_hot_free_vms: "{{ vms | json_query(query) | length}}"
+    vars:
+      query: "items[?(@.spec.desired_vm_status == 'running' &&
+                @.spec.session_id == null)]"
+
+  - name: task-3
+    debug:
+      msg: 
+      - 'current_num_hot_free_vms: {{ current_num_hot_free_vms }}'
+
+
+# query: "items[?(@.spec.desired_vm_status == 'running' &&
+#                 @.spec.current_vm_status == 'running' && 
+#                 @.spec.session_id == null)]"
