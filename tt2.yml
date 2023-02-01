@@ -18,4 +18,3 @@
     debug:
       msg: 
       - 'count: {{ vms.count }}'
-      - 'length: {{ vms.length }}'
