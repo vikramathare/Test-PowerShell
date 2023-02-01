@@ -1,19 +1,21 @@
 - name: playbook
   hosts: localhost
   tasks:
-  - name: PtsVMPoolConfig-test-1-task1
-    kubernetes.core.k8s_info:
+  - name: task-1
+    k8s_info:
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
     register: vms
 
-  - name: FILTER FOR POD NAME AND STATE
+  - name: task-2
     set_fact:
-      vms_list: "{{ vms | json_query(query) }}"
+      vms: "{{ vms | json_query(query) }}"
     vars:
-      query: "resources[].spec"
+      query: "resources[*].spec.vm_name"
 
-  - name: FILTER FOR POD NAME AND STATE
+  - name: task-2
     debug:
-      msg: "{{ vms_list }}"
+      msg: 
+      - 'count: {{ vms.count }}'
+      - 'length: {{ vms.length }}'
