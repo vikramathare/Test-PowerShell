@@ -14,7 +14,12 @@
     vars:
       query: "resources[*].spec.vm_name"
 
-  - name: task-2
+  - name: task-3
     debug:
       msg: 
       - 'count: {{ vms.count | int }}'
+
+  - name: task-3
+    debug:
+      msg: 
+      - 'vms: {{ vms }}'
