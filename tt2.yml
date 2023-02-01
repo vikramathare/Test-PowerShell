@@ -17,7 +17,7 @@
   - name: task-3
     debug:
       msg: 
-      - 'count: {{ vms.count | |length }}'
+      - 'count: {{ vms | |length }}'
 
   - name: task-3
     debug:
