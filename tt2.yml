@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
   - name: task-1
-    k8s_info:
+    kubernetes.core.k8s_info:
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
