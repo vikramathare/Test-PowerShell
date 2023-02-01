@@ -17,4 +17,4 @@
   - name: task-2
     debug:
       msg: 
-      - 'count: {{ vms.count }}'
+      - 'count: {{ vms.count | int }}'
