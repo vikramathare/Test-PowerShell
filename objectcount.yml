@@ -20,6 +20,11 @@
       msg: 
       - 'current_num_hot_free_vms: {{ current_num_hot_free_vms | length }}'
 
+  - name: task-3
+    debug:
+      msg: 
+      - 'vms: {{ vms }}'
+
 
 # query: "items[?(@.spec.desired_vm_status == 'running' &&
 #                 @.spec.current_vm_status == 'running' && 
