@@ -1,5 +1,7 @@
 - name: playbook
   hosts: localhost
+  vars:
+  - vmpool: vmpool3
   tasks:
   - name: task-1
     kubernetes.core.k8s_info:
@@ -12,15 +14,9 @@
     set_fact:
       vms_var: '{{ vms | json_query(query) }}'
     vars:
-      query: "resources[?(@.spec.desired_vm_state == 'present' && 
-                @.spec.desired_vm_status == 'running' && 
-                @.spec.session_id == null && @.spec.orphan !=true)].spec.vm_name"
+      query: "resources[?(@.metadata.ownerReferences.name=={{ vmpool }})].spec.vm_name"
 
-  # - name: task-3
-  #   set_fact:
-  #     current_num_hot_free_vms_var: '{{ vms_var | length }}'
-
-  - name: task-2
+  - name: task-3
     debug:
       msg:
-      - 'vms_var: {{ vms_var | length }}'
+      - 'vms_var: {{ vms_var }}'

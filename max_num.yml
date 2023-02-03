@@ -1,0 +1,14 @@
+- name: playbook
+  hosts: localhost
+  vars:
+  - num1: 4
+  - num2: 6
+  tasks:
+  - name: task-1
+    set_fact:
+      maxnum: '{{ [ num1, num2 ] | min }}'
+  
+  - name: task-2
+    debug:
+      msg:
+      - 'maxnum: {{ maxnum }}'
