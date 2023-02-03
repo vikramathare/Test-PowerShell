@@ -10,13 +10,16 @@
 
   - name: task-2
     set_fact:
-      current_num_hot_free_vms_var: '{{ vms | json_query(query) }}'
+      vms_var: '{{ vms | json_query(query) }}'
     vars:
       query: "resources[?(@.spec.desired_vm_state == 'present' && 
                 @.spec.desired_vm_status == 'running' && 
                 @.spec.session_id == null && @.spec.orphan !=true)] | name | length"
 
   - name: task-3
+    set_fact:
+      current_num_hot_free_vms_var: '{{ vms_var | length }}'
+
+  - name: task-2
     debug:
-      msg: 
-      - 'current_num_hot_free_vms: {{ current_num_hot_free_vms_var }}'
+      current_num_hot_free_vms: '{{ current_num_hot_free_vms_var }}'
