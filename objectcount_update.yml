@@ -5,8 +5,8 @@
     kubernetes.core.k8s_info:
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVMPoolConfig
-      name: '{{ ansible_operator_meta.name }}'
-      namespace: '{{ ansible_operator_meta.namespace }}'
+      name: vmpool3
+      namespace: sandbox-vmpool-operator-system
     register: vms
 
   - name: task-2
@@ -20,4 +20,4 @@
   - name: task-3
     debug:
       msg: 
-      - 'current_num_hot_free_vms: {{ current_num_hot_free_vms }}'
+      - 'current_num_hot_free_vms: {{ current_num_hot_free_vms_var }}'
