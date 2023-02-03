@@ -12,7 +12,7 @@
     set_fact:
       current_num_hot_free_vms_var: '{{ vms | json_query(query) }}'
     vars:
-      query: "items[*]"
+      query: "resources[*]"
 
   - name: task-3
     debug:
