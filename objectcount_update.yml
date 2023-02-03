@@ -14,7 +14,7 @@
     vars:
       query: "resources[?(@.spec.desired_vm_state == 'present' && 
                 @.spec.desired_vm_status == 'running' && 
-                @.spec.session_id == null && @.spec.orphan !=true)] | length"
+                @.spec.session_id == null && @.spec.orphan !=true)] | first | length"
 
   - name: task-3
     debug:
