@@ -4,8 +4,7 @@
   - name: task-1
     kubernetes.core.k8s_info:
       api_version: vmpool-operator.slb.com/v1
-      kind: PtsVMPoolConfig
-      name: vmpool3
+      kind: PtsVMControl
       namespace: sandbox-vmpool-operator-system
     register: vms
 
