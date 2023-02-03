@@ -13,9 +13,10 @@
     set_fact:
       current_num_hot_free_vms_var: '{{ vms | json_query(query) }}'
     vars:
-      query: "items[?(@.desired_vm_state == 'present' && orphan !=true &&
-                @.spec.desired_vm_status == 'running' &&
-                @.spec.session_id == null)]"
+      query: "items[?(@.desired_vm_state == 'present' &&
+                @.spec.desired_vm_status == 'running' &&)]"
+                #orphan !=true &&
+                #@.spec.session_id == null)]"
 
   - name: task-3
     debug:
