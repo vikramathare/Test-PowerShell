@@ -22,4 +22,5 @@
 
   - name: task-2
     debug:
+      msg:
       - 'current_num_hot_free_vms: {{ current_num_hot_free_vms_var }}'
