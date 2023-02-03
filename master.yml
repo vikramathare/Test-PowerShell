@@ -3,8 +3,15 @@
   tasks:
   - name: Get-VM-CR
     kubernetes.core.k8s_info:
-      kind: VMConfig
+      api_version: vmpool-operator.slb.com/v1
+      kind: PtsVmControl
+      namespace: sandbox-vmpool-operator-system
+      metadata:
+        ownerReferences:
+          name: 
+
     register: vms
+
 
   - name: Debug
     debug:
