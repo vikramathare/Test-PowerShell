@@ -1,0 +1,10 @@
+---
+- name: PtsUpdateVmPool-Update-VMPool-VM-1
+  debug:
+    msg: 
+    - 'item: {{ item }}'
+
+- name: PtsUpdateVmPool-Update-VMPool-VM-2
+  debug:
+    msg: 
+    - 'item.metadata: {{ item.metadata }}'

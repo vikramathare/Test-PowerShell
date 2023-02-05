@@ -1,0 +1,17 @@
+---
+- name: PtsVMPoolUpdate-Master-Update-VMPool-VM-Get
+  k8s_info:
+    api_version: vmpool-operator.slb.com/v1
+    kind: PtsVmControl
+    namespace: sandbox-vmpool-operator-system
+  register: vms
+
+- name: PtsVMPoolUpdate-Master-Update-VMPool-VM-Filter
+  set_fact:
+    get_vms: "{{ vms | json_query(query) }}"
+  vars:
+    query: "resources[*]"
+
+- name: PtsVMPoolUpdate-Master-Update-VMPool-VM-Update
+  include_tasks: test_1.yml
+  with_items: '{{ get_vms }}'
