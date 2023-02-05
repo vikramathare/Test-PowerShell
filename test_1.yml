@@ -2,9 +2,9 @@
 - name: PtsUpdateVmPool-Update-VMPool-VM-1
   debug:
     msg: 
-    - 'item: {{ item }}'
+    - 'item: {{ item.spec.vm_name }}'
 
 - name: PtsUpdateVmPool-Update-VMPool-VM-2
   debug:
     msg: 
-    - 'item.metadata: {{ item.metadata }}'
+    - 'item.metadata: {{ item.metadata.ownerReferences }}'
