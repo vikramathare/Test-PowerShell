@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
   - name: PtsVMPoolUpdate-Master-Update-VMPool-VM-Get
-    k8s_info:
+    kubernetes.core.k8s_info:
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVmControl
       namespace: sandbox-vmpool-operator-system
