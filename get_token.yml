@@ -8,7 +8,7 @@
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVMPoolConfig
       name: vmpool3
-      namespace: '{{ ansible_operator_meta.namespace }}'
+      namespace: sandbox-vmpool-operator-system
     register: vmpool
 
   - name: debug-1
