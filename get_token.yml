@@ -20,7 +20,7 @@
     set_fact:
       token: '{{ vmpool | json_query(query) }}'
     vars:
-      query: "resources[?(@.name == 'vmpool3')].spec.token"
+      query: "resources[?(@.metadata.name == 'vmpool3')].spec.token"
   
   - name: debug-2
     debug:
