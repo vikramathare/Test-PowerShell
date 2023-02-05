@@ -7,7 +7,7 @@
     kubernetes.core.k8s_info:
       api_version: vmpool-operator.slb.com/v1
       kind: PtsVMPoolConfig
-      name: '{{ vm_pool }}'
+      name: vmpool3
       namespace: '{{ ansible_operator_meta.namespace }}'
     register: vmpool
 
