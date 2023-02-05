@@ -7,4 +7,4 @@
 - name: PtsUpdateVmPool-Update-VMPool-VM-2
   debug:
     msg: 
-    - 'item.metadata: {{ item.metadata.ownerReferences.name }}'
+    - 'item.metadata: {{ item.metadata.ownerReferences[name] }}'
