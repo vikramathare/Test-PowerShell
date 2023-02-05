@@ -1,0 +1,14 @@
+- name: playbook
+  hosts: localhost
+  tasks:
+  - name: Get-VMConfig-CR
+    k8s_info:
+      api_version: cache.vmpool.com/v1
+      kind: VMConfig
+      namespace: sandbox-vmpool-operator-system
+      name: vmpool-aaj85
+    register: vms
+
+  - name: patch-vms
+    include_tasks: task-2.yml
+    with_items: '{{ vms.resources }}'
